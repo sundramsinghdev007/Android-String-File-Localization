@@ -1,4 +1,4 @@
-package org.jetbrains.plugins.template
+package com.github.sundramsinghdev007.stringandassetscleaner
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls
