@@ -1,6 +1,6 @@
 # Changelog
 
-## [1.0.0] - 2026-03-08
+## [Unreleased]
 ### Added
 - Initial release of Android String File Localization.
 - **Automated Translation:** Support for Google Translate engine integration.
@@ -10,6 +10,9 @@
 - **Sanitization:** Auto-escaping of apostrophes and removal of NBSP characters.
 - **Internationalization:** Plugin UI ready for multiple languages via `MyBundle`.
 - **Background Tasks:** Non-blocking translation with progress indicator.
+
+
+## [1.0.0] - 2026-03-08
 
 ### Fixed
 - Fixed "Apostrophe not preceded by \" build errors.

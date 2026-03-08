@@ -79,3 +79,9 @@ You can trigger the tool from three locations:
 This project is licensed under the **MIT License**. See the [LICENSE](/LICENSE.txt) file for more details.
 
 ---
+
+### Thanks
+
+Initial scaffold created from [IntelliJ Platform Plugin Template](https://github.com/JetBrains/intellij-platform-plugin-template)
+
+---
