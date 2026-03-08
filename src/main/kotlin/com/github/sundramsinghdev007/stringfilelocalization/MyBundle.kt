@@ -1,4 +1,4 @@
-package com.github.sundramsinghdev007.stringandassetscleaner
+package com.github.sundramsinghdev007.stringfilelocalization
 
 import com.intellij.DynamicBundle
 import org.jetbrains.annotations.NonNls

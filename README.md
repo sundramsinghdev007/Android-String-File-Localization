@@ -1,52 +1,77 @@
-# string_and_assets_cleaner
+# Android String File Localization 🌍
 
-![Build](https://github.com/sundramsinghdev007/string_and_assets_cleaner/workflows/Build/badge.svg)
-[![Version](https://img.shields.io/jetbrains/plugin/v/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/MARKETPLACE_ID.svg)](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID)
+**Android String File Localization** is a productivity-focused IntelliJ/Android Studio plugin designed to streamline the localization process. It automates the translation of `strings.xml` files while ensuring the output is sanitized and 100% compliant with Android build requirements.
 
-## Template ToDo list
-- [x] Create a new [IntelliJ Platform Plugin Template][template] project.
-- [ ] Get familiar with the [template documentation][template].
-- [ ] Adjust the [pluginGroup](./gradle.properties) and [pluginName](./gradle.properties), as well as the [id](./src/main/resources/META-INF/plugin.xml) and [sources package](./src/main/kotlin).
-- [ ] Adjust the plugin description in `README` (see [Tips][docs:plugin-description])
-- [ ] Review the [Legal Agreements](https://plugins.jetbrains.com/docs/marketplace/legal-agreements.html?from=IJPluginTemplate).
-- [ ] [Publish a plugin manually](https://plugins.jetbrains.com/docs/intellij/publishing-plugin.html?from=IJPluginTemplate) for the first time.
-- [ ] Set the `MARKETPLACE_ID` in the above README badges. You can obtain it once the plugin is published to JetBrains Marketplace.
-- [ ] Set the [Plugin Signing](https://plugins.jetbrains.com/docs/intellij/plugin-signing.html?from=IJPluginTemplate) related [secrets](https://github.com/JetBrains/intellij-platform-plugin-template#environment-variables).
-- [ ] Set the [Deployment Token](https://plugins.jetbrains.com/docs/marketplace/plugin-upload.html?from=IJPluginTemplate).
-- [ ] Click the <kbd>Watch</kbd> button on the top of the [IntelliJ Platform Plugin Template][template] to be notified about releases containing new features and fixes.
-- [ ] Configure the [CODECOV_TOKEN](https://docs.codecov.com/docs/quick-start) secret for automated test coverage reports on PRs
+## What It Is
 
-<!-- Plugin description -->
-This Fancy IntelliJ Platform Plugin is going to be your implementation of the brilliant ideas that you have.
+A lightweight but powerful IntelliJ IDEA/Android Studio plugin that identifies missing translations in your Android project and fills them using automated translation services. It handles the "heavy lifting" of creating directories, managing XML tags, and sanitizing text for Android compatibility.
 
-This specific section is a source for the [plugin.xml](/src/main/resources/META-INF/plugin.xml) file which will be extracted by the [Gradle](/build.gradle.kts) during the build process.
+## ✨ Why use this?
 
-To keep everything working, do not remove `<!-- ... -->` sections. 
-<!-- Plugin description end -->
+Manual translation is slow and error-prone. This plugin solves the most common headaches:
 
-## Installation
-
-- Using the IDE built-in plugin system:
-
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>Marketplace</kbd> > <kbd>Search for "string_and_assets_cleaner"</kbd> >
-  <kbd>Install</kbd>
-
-- Using JetBrains Marketplace:
-
-  Go to [JetBrains Marketplace](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID) and install it by clicking the <kbd>Install to ...</kbd> button in case your IDE is running.
-
-  You can also download the [latest release](https://plugins.jetbrains.com/plugin/MARKETPLACE_ID/versions) from JetBrains Marketplace and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
-- Manually:
-
-  Download the [latest release](https://github.com/sundramsinghdev007/string_and_assets_cleaner/releases/latest) and install it manually using
-  <kbd>Settings/Preferences</kbd> > <kbd>Plugins</kbd> > <kbd>⚙️</kbd> > <kbd>Install plugin from disk...</kbd>
-
+* **No more "Apostrophe" crashes:** Automatically escapes `'` to `\'` so your app actually builds.
+* **Invisible Character Removal:** Cleans out `NBSP` (Non-Breaking Spaces) that often hide in web-copied text and break UI layouts.
+* **Zero-Loss Merging:** It doesn't overwrite your work; it merges new translations into existing localized files.
 
 ---
-Plugin based on the [IntelliJ Platform Plugin Template][template].
 
-[template]: https://github.com/JetBrains/intellij-platform-plugin-template
-[docs:plugin-description]: https://plugins.jetbrains.com/docs/intellij/plugin-user-experience.html#plugin-description-and-presentation
+## 🛠 Features
+
+* **Smart Search:** Quickly find specific keys or English phrases in your resource files.
+* **Contextual Previews:** Displays original English text alongside keys for better translation context.
+* **Bulk Selection Logic:** * **Smart Select:** Picks only missing translations.
+* **Force Update:** Re-translates everything to refresh your language files.
+
+
+* **Translatable Guard:** Automatically respects and protects strings marked `translatable="false"`.
+* **Tools Menu Integration:** Accessible via `Tools > Translate Strings...` or via right-click context menus.
+
+---
+
+## 📖 How to Use
+
+### 1. Launching the Plugin
+
+You can trigger the tool from three locations:
+
+* **The Tools Menu:** `Tools` -> `Translate Strings...`
+* **The Project Tree:** Right-click on any `strings.xml`.
+* **The Editor:** Right-click inside your code and select the translation action.
+
+### 2. Selection Strategy
+
+1. **Enter Language Code:** Type the ISO code (e.g., `hi` for Hindi, `es` for Spanish).
+2. **Filter & Select:** Use the search bar to find keys. Use **Select All** to grab missing strings.
+3. **Execute:** Click **OK**. Watch the progress in the bottom-right background task bar.
+4. **Completion:** A success balloon notification will confirm how many strings were updated.
+
+---
+
+## 🏗 Installation
+
+### Manual Install
+
+1. Download the latest `plugin.zip` from the [Releases](https://www.google.com/search?q=https://github.com/sundramsinghdev007/Android-String-File-Localization/releases) section.
+2. Open Android Studio -> `Settings` -> `Plugins`.
+3. Click the ⚙️ (Gear Icon) -> **Install Plugin from Disk...**.
+4. Select the `.zip` file and restart.
+
+---
+
+## 💻 Tech Stack
+
+* **Language:** Kotlin
+* **Framework:** IntelliJ Platform SDK
+* **Target:** Android Studio (Ladybug 2024.2.1+)
+* **Architecture:** MVVM-inspired UI with Background Thread (BGT) action updates.
+
+---
+
+## 📄 License
+
+This project is licensed under the **MIT License**. See the [LICENSE](/LICENSE.txt) file for more details.
+
+---
+
+Thanks to this repo [intellij-platform-plugin-template](https://github.com/JetBrains/intellij-platform-plugin-template) which helps to set-up the project.

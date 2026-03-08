@@ -1,15 +1,27 @@
-<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
-    <id>com.github.sundramsinghdev007.stringandassetscleaner</id>
-    <name>string_and_assets_cleaner</name>
+    <id>com.github.sundramsinghdev007.stringfilelocalization</id>
+    <name>Android String File Localization</name>
     <vendor>sundramsinghdev007</vendor>
-
-    <depends>com.intellij.modules.platform</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
+    <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.sundramsinghdev007.stringandassetscleaner.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
-        <postStartupActivity implementation="com.github.sundramsinghdev007.stringandassetscleaner.startup.MyProjectActivity" />
+        <notificationGroup id="Translation Notifications"
+                           displayType="BALLOON"
+                           key="notification.group.name"/>
     </extensions>
+
+    <actions resource-bundle="messages.MyBundle">
+        <action id="com.github.sundramsinghdev007.TranslateStringsAction"
+                class="com.github.sundramsinghdev007.stringfilelocalization.action.TranslateStringsAction"
+                icon="AllIcons.Actions.Refresh">
+
+            <add-to-group group-id="ToolsMenu" anchor="last"/>
+            <add-to-group group-id="ProjectViewPopupMenu" anchor="last"/>
+            <add-to-group group-id="EditorPopupMenu" anchor="last"/>
+        </action>
+    </actions>
 </idea-plugin>
