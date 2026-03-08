@@ -3,9 +3,9 @@
 **Android String File Localization** is a productivity-focused IntelliJ/Android Studio plugin designed to streamline the localization process. It automates the translation of `strings.xml` files while ensuring the output is sanitized and 100% compliant with Android build requirements.
 
 ## What It Is
-
+ <!-- Plugin description -->
 A lightweight but powerful IntelliJ IDEA/Android Studio plugin that identifies missing translations in your Android project and fills them using automated translation services. It handles the "heavy lifting" of creating directories, managing XML tags, and sanitizing text for Android compatibility.
-
+<!-- Plugin description end -->
 ## ✨ Why use this?
 
 Manual translation is slow and error-prone. This plugin solves the most common headaches:
