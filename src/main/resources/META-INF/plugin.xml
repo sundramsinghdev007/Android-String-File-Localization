@@ -1,8 +1,7 @@
 <idea-plugin>
     <id>com.github.sundramsinghdev007.stringfilelocalization</id>
     <name>Android String File Localization</name>
-    <vendor>sundramsinghdev007</vendor>
-
+    <vendor>Sundram Singh</vendor>
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <depends>com.intellij.modules.platform</depends>
